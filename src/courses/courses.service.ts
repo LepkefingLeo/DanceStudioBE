@@ -58,19 +58,12 @@ export class CoursesService {
     }
 
     const amount = course.length * 500;
-    const paymentTime = new Date();
     
-    const application = await this.db.applications.create({
+    return await this.db.applications.create({
       data: {
-        id: id,
         course_id: id,
         price: amount,
       }
     });
-    
-    return {
-      price: application.price,
-      paymentTime: paymentTime,
-    };
   }
 }

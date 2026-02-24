@@ -33,7 +33,7 @@ export class CoursesController {
   }
 
   @Post('/{:course}/apply')
-  apply(@Param('id') id: string) {
+  apply(@Param('course') id: string) {
     return this.coursesService.apply(+id);
   }
 }
